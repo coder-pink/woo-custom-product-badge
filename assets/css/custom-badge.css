@@ -1,0 +1,34 @@
+
+.wcpb-badge {
+    display: inline-block;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    margin-bottom: 12px;
+    transition: background-color 0.3s ease;
+    cursor: default;
+}
+
+/* Hover effect */
+.wcpb-badge:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+/* Badge color variations */
+.wcpb-badge.best-seller {
+    background-color: #ff4d4f;
+}
+
+.wcpb-badge.hot-deal {
+    background-color: #ff9800;
+}
+
+.wcpb-badge.new-arrival {
+    background-color: #4caf50;
+}
