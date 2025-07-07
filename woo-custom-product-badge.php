@@ -9,6 +9,27 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+//  activation check
+function wcpb_check_woocommerce_active() {
+    if ( ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+        add_action( 'admin_notices', function() {
+            echo '<div class="notice notice-error"><p>';
+            esc_html_e( 'Woo Custom Product Badge requires WooCommerce to be installed and active.', 'woo-custom-product-badge' );
+            echo '</p></div>';
+        });
+        return false;
+    }
+    return true;
+}
+
+if ( ! wcpb_check_woocommerce_active() ) {
+    return;
+}
+
+
+
+// main class
+
 class Woo_Custom_Product_Badge {
 
     public function __construct() {
